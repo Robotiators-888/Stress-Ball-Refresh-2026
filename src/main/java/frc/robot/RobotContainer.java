@@ -50,7 +50,7 @@ public class RobotContainer {
                                                 joystick.getRawAxis(Constants.RIGHT_AXIS), .05), 1),
                                 Math.pow(MathUtil.applyDeadband(
                                                 -joystick.getRawAxis(Constants.LEFT_AXIS), .05), 1),
-                                Constants.DRIVE_SPEED), driveSubsystem));
+                                Constants.SAFE_DRIVE_SPEED), driveSubsystem));
                 shooterSubsystem.setDefaultCommand(new RunCommand(
                                 () -> shooterSubsystem.flywheelSpeed(0), shooterSubsystem));
                 indexSubsystem.setDefaultCommand(
