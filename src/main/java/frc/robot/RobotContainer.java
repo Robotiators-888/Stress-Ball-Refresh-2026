@@ -89,6 +89,9 @@ public class RobotContainer {
                 // new InstantCommand(
                 // () -> indexSubsystem
                 // .stopAll())))));
+
+                lBumper.whileTrue(new RunCommand(()->indexSubsystem.setIndexSpeed(Constants.FULL_SPEED_INDEX),indexSubsystem)).onFalse(new RunCommand(()->indexSubsystem.setIndexSpeed(0), indexSubsystem));
+
                 startButton.toggleOnTrue(
                         new InstantCommand(() -> toggleSpeed())
                 );
